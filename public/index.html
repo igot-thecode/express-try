@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Student Log</title>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      href="https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form id="logForm">
+      <select
+        aria-label="Select Course"
+        id="course"
+        name="course"
+        data-cy="course_select"
+      >
+        <option selected value="" >Choose Courses</option>
+        <!-- load dynamically in script.js -->
+      </select>
+      <br />
+
+      <label for="uvuId" class="">UVU ID</label>
+      <input type="text" id="uvuId" name="uvuId" data-cy="uvuId_input" maxlength="8" value="10234567"/>
+      
+      <h3 id="uvuIdDisplay" data-cy="uvuIdDisplay">
+        select a course and input a uvu id...
+      </h3>
+      <ul id="logList" data-cy="logs" class="flex-item">
+        <!-- load dynamically in script.js -->
+      </ul>
+      <label class="flex-item">New Log</label>
+      <textarea
+        id="textareaBox"
+        style="height: 75px"
+        aria-label="add log textarea"
+        data-cy="log_textarea"
+      ></textarea
+      ><br />
+      <button id="addLogBtn" type="submit" data-cy="add_log_btn"><span>Add Log </span></button>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- DONE: move all TODOs that done above to down below here and change the label to DONE:. -->
+
+<!-- HEAD tag -->
+<!-- DONE: set the lang attribute to American English -->
+<!-- DONE: set the characterset to utf8 -->
+<!-- DONE: temporarily use stackoverflow's favicon. "https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico"-->
+<!-- DONE: Load your CSS file -->
+
+<!-- FORM tag -->
+<!-- DONE: The following options are currently static values to show you sample data.  -->
+<!-- Use fetch to replace them with dynamic data from GET https://json-server-ft3qa5--3000.local.webcontainer.io/api/v1/courses -->
+<!-- MY LINK: https://json-server-e1ccmf--3000.local.webcontainer.io/api/v1/courses -->
+<!-- Use your own unique URL you recorded, not the sample one above. -->
+<!-- DONE: Don't show the uvu id text input box until a course was selected above. -->
+<!-- DONE: If course ever becomes unselected, don't show the uvu id text input box.-->
+<!-- DONE: write `10234567` as sample data on the input field below  -->
+<!-- DONE: Ensure the character length never exceeds 8 -->
+<!-- DONE: Only numbers, no letters or other characters-->
+<!-- DONE: When character length reaches 8 and it's only digits, fire off ajax request, if 200 or 304, display results, else appropriately guide the user. -->
+<!-- DONE: The following options are currently static values to show you an example.  -->
+<!-- You must replace them with dynamic data by ajaxing GET https://json-server-ft3qa5(or e1ccmf for my server)--3000.local.webcontainer.io/logs?courseId=<courseID>&uvuId=<uvuID> -->
+<!-- DONE: Click anywhere on the log to toggle visibility of the log (text only, not the date)-->
+<!-- DONE: Button should be disabled until there are logs displayed -->
+<!-- TODO: When the button is clicked, -->
+<!-- 1. use fetch to post the new log above and -->
+<!-- 2. add it to the displayed list-->
+
+<!-- JS -->
+<!-- DONE: Script tag to your javascript file -->
+
+<!-- The Rest -->
+<!-- DONE: add appropriate comments you feel are necessary, if any, for the next coder to understand -->

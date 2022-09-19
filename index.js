@@ -1,15 +1,20 @@
 console.log('Loading Server...')
+const express = require('express')
+const logger = require('morgan')
+const helmet = require('helmet')
+
+const app = express()
+
 const PORT = 3000
 const db = require('./db.json')
 
-const express = require('express')
-const logger = require('morgan')
-const app = express()
-
-
 //load middleware
+
 //internal
 app.use(logger('dev')) //passes on next
+app.use(helmet())
+
+//making web root directory
 app.use(express.static('public')) //does not pass on next
 //external
 
@@ -60,9 +65,10 @@ app.get('/api/v1/courses', (req, res) => {
 
 })
 
+app.get('*', (req, res, err) => {
+  res.send('File Not Found Hoser.')
+})
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`)
 })
-
-// let msg = new SpeechSynthesisUtterance('Hello World!')
-// window.speechSynthesis.speak(msg)

@@ -65,6 +65,7 @@ app.get('/api/v1/courses', (req, res) => {
 
 })
 
+//404 page
 app.get('*', (req, res, err) => {
   res.send('File Not Found Hoser.')
 })

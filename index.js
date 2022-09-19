@@ -70,6 +70,19 @@ app.get('*', (req, res, err) => {
   res.send('File Not Found Hoser.')
 })
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`)
+})
+
+
+function gracefulShutdown() {
+  // clean up and prepare to die
+  server.close(() => {
+    console.log('Server is closed.')
+  })
+}
+
+process.on('SIGINT', () => {
+  console.log('Received SIGINT')
+  gracefulShutdown()
 })
